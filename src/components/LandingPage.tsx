@@ -29,26 +29,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [showCTA, setShowCTA] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Ensure component is fully mounted before showing content
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-      setIsVisible(true);
-    }, 50);
-
+    setIsVisible(true);
+    
     // Show sticky CTA after scrolling
     const handleScroll = () => {
       setShowCTA(window.scrollY > 800);
     };
     
     window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleContactSales = () => {
@@ -131,18 +122,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       answer: "Absolutely. SlotEase supports guest booking with phone verification, making it accessible to everyone regardless of technical comfort level."
     }
   ];
-
-  // Show loading state until component is ready
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-white">

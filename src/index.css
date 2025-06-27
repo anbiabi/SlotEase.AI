@@ -15,12 +15,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Prevent flash of unstyled content */
-body {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
 /* Custom animations */
 @keyframes fadeIn {
   from {
@@ -149,31 +143,4 @@ body {
     font-size: 2.5rem;
     line-height: 3rem;
   }
-}
-
-/* Prevent layout shift during loading */
-.prevent-layout-shift {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Smooth transitions for view changes */
-.view-transition {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.view-transition.entering {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.view-transition.entered {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.view-transition.exiting {
-  opacity: 0;
-  transform: translateY(-20px);
 }
