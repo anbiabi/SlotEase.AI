@@ -8,10 +8,11 @@ import { Analytics } from './components/Analytics';
 import { SetupWizard } from './components/SetupWizard';
 import { UserOnboarding } from './components/UserOnboarding';
 import { LocationServiceFinder } from './components/LocationServiceFinder';
+import { LandingPage } from './components/LandingPage';
 import { useAppointments } from './hooks/useAppointments';
 
 function App() {
-  const [currentView, setCurrentView] = useState('onboarding');
+  const [currentView, setCurrentView] = useState('landing');
   const [userRole, setUserRole] = useState<'admin' | 'user'>('user');
   const { currentProvider } = useAppointments();
 
@@ -26,8 +27,14 @@ function App() {
     setUserRole('admin');
   };
 
+  const handleGetStarted = () => {
+    setCurrentView('onboarding');
+  };
+
   const renderCurrentView = () => {
     switch (currentView) {
+      case 'landing':
+        return <LandingPage onGetStarted={handleGetStarted} />;
       case 'onboarding':
         return <UserOnboarding onComplete={handleOnboardingComplete} />;
       case 'location-services':
@@ -47,9 +54,18 @@ function App() {
       case 'setup':
         return <SetupWizard />;
       default:
-        return <UserOnboarding onComplete={handleOnboardingComplete} />;
+        return <LandingPage onGetStarted={handleGetStarted} />;
     }
   };
+
+  // Show landing page without header
+  if (currentView === 'landing') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {renderCurrentView()}
+      </div>
+    );
+  }
 
   // Show onboarding without header
   if (currentView === 'onboarding') {
@@ -74,6 +90,12 @@ function App() {
 
       {/* Navigation Controls */}
       <div className="fixed bottom-4 right-4 space-y-2">
+        <button
+          onClick={() => setCurrentView('landing')}
+          className="block w-full bg-gray-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-700 transition-colors text-sm font-medium"
+        >
+          Back to Landing
+        </button>
         <button
           onClick={() => setCurrentView('location-services')}
           className="block w-full bg-accent-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-accent-700 transition-colors text-sm font-medium"
