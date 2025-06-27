@@ -2,6 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* RTL Support */
+.rtl {
+  direction: rtl;
+}
+
+.rtl .text-left {
+  text-align: right;
+}
+
+.rtl .text-right {
+  text-align: left;
+}
+
+.rtl .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.rtl .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+.rtl .pl-3 {
+  padding-left: 0;
+  padding-right: 0.75rem;
+}
+
+.rtl .pr-3 {
+  padding-right: 0;
+  padding-left: 0.75rem;
+}
+
+.rtl .border-l {
+  border-left: 0;
+  border-right: 1px solid;
+}
+
+.rtl .border-r {
+  border-right: 0;
+  border-left: 1px solid;
+}
+
+.rtl .rounded-l-lg {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.rtl .rounded-r-lg {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 /* Custom background pattern */
 .bg-grid-pattern {
   background-image: 
@@ -123,6 +180,15 @@ html {
   100% { transform: rotate(360deg); }
 }
 
+/* Language-specific font optimizations */
+[lang="ar"] {
+  font-family: 'Noto Sans Arabic', 'Arial', sans-serif;
+}
+
+[lang="zh"] {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
 /* Responsive text sizing */
 @media (max-width: 640px) {
   .text-responsive-xl {
@@ -142,5 +208,26 @@ html {
   .text-responsive-xl {
     font-size: 2.5rem;
     line-height: 3rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-pulse-soft {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-primary-100 {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .text-gray-600 {
+    color: #000;
   }
 }

@@ -1,0 +1,150 @@
+{
+  "hero": {
+    "title": "Transform Your Appointment Scheduling Experience",
+    "subtitle": "The universal platform that eliminates scheduling conflicts, reduces wait times, and delivers exceptional customer experiences across hospitals, government offices, banks, and service providers.",
+    "cta": "Get Started Free",
+    "watchDemo": "Watch Demo",
+    "poweredBy": "Powered by Advanced AI Technology"
+  },
+  "stats": {
+    "waitTimeReduction": "Reduction in Wait Times",
+    "fewerNoShows": "Fewer No-Shows",
+    "customerSatisfaction": "Customer Satisfaction",
+    "availability": "Availability"
+  },
+  "painPoints": {
+    "title": "Tired of endless back-and-forth emails and scheduling conflicts?",
+    "subtitle": "You're not alone. Service providers worldwide struggle with the same challenges every day.",
+    "wastedTime": {
+      "title": "Wasted Time",
+      "description": "Staff spend hours managing appointments manually, leading to errors and frustrated customers waiting in long queues."
+    },
+    "poorExperience": {
+      "title": "Poor Experience",
+      "description": "Customers face uncertainty about wait times, difficulty booking appointments, and lack of real-time updates."
+    },
+    "lostRevenue": {
+      "title": "Lost Revenue",
+      "description": "No-shows, double bookings, and inefficient scheduling directly impact your bottom line and operational efficiency."
+    }
+  },
+  "solution": {
+    "title": "Meet SlotEase: Your Complete Solution",
+    "subtitle": "A comprehensive platform that transforms how you manage appointments and serve your customers.",
+    "features": {
+      "smartScheduling": {
+        "title": "Smart Scheduling",
+        "description": "AI-powered appointment scheduling that eliminates conflicts and optimizes your calendar automatically.",
+        "demo": "Real-time availability checking across all services"
+      },
+      "queueManagement": {
+        "title": "Queue Management",
+        "description": "Intelligent queue management with real-time updates and estimated wait times for better customer experience.",
+        "demo": "Live queue monitoring with position tracking"
+      },
+      "aiOptimization": {
+        "title": "AI Optimization",
+        "description": "Machine learning algorithms that predict demand patterns and suggest optimal scheduling strategies.",
+        "demo": "Predictive analytics for peak hour management"
+      },
+      "universalAccess": {
+        "title": "Universal Access",
+        "description": "Multi-channel booking through web, mobile, phone, and SMS for maximum accessibility.",
+        "demo": "One platform, multiple access points"
+      }
+    }
+  },
+  "future": {
+    "title": "The Future of Intelligent Scheduling",
+    "subtitle": "Our upcoming AI Smart Guide will revolutionize how appointments are managed with predictive intelligence.",
+    "comingSoon": "Coming Soon: AI Smart Guide",
+    "features": {
+      "predictiveAnalytics": {
+        "title": "Predictive Analytics",
+        "description": "AI predicts peak times, suggests optimal scheduling, and automatically adjusts capacity based on historical patterns."
+      },
+      "naturalLanguage": {
+        "title": "Natural Language Booking",
+        "description": "Customers can book appointments using natural language through voice, chat, or text messages."
+      },
+      "autoOptimization": {
+        "title": "Auto-Optimization",
+        "description": "Continuous learning algorithms automatically optimize schedules, reduce no-shows, and improve efficiency."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by Leading Organizations",
+    "subtitle": "Join thousands of satisfied customers who've transformed their operations with SlotEase.",
+    "reviews": [
+      {
+        "name": "Dr. Sarah Chen",
+        "role": "Medical Director, City General Hospital",
+        "content": "SlotEase reduced our no-show rate by 35% and improved patient satisfaction scores significantly. The AI recommendations are incredibly accurate."
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "Operations Manager, First National Bank",
+        "content": "We've cut waiting times in half and our staff can focus on customers instead of managing appointments. The ROI was immediate."
+      },
+      {
+        "name": "Jennifer Park",
+        "role": "Director, Immigration Services",
+        "content": "The multilingual support and accessibility features have made our services available to everyone in our community. Game-changing platform."
+      }
+    ]
+  },
+  "trust": {
+    "enterpriseSecurity": "Enterprise Security",
+    "gdprCompliant": "GDPR Compliant",
+    "uptime": "99.9% Uptime",
+    "support": "24/7 Support"
+  },
+  "mobile": {
+    "title": "Perfect on Every Device",
+    "subtitle": "SlotEase works seamlessly across all devices, ensuring your customers can book appointments anytime, anywhere.",
+    "features": {
+      "mobileOptimized": {
+        "title": "Mobile Optimized",
+        "description": "Native mobile experience with offline capabilities"
+      },
+      "desktopDashboard": {
+        "title": "Desktop Dashboard",
+        "description": "Comprehensive admin interface for full control"
+      },
+      "voiceSms": {
+        "title": "Voice & SMS",
+        "description": "Book appointments via phone or text message"
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about SlotEase",
+    "questions": [
+      {
+        "question": "How quickly can we get started with SlotEase?",
+        "answer": "Most organizations are up and running within 10 minutes using our Smart Setup Wizard. The AI guides you through configuration based on your service type."
+      },
+      {
+        "question": "Does SlotEase integrate with existing systems?",
+        "answer": "Yes, SlotEase offers robust API integration capabilities and can connect with most existing healthcare, government, and business management systems."
+      },
+      {
+        "question": "What about data security and privacy?",
+        "answer": "We use enterprise-grade encryption, are GDPR compliant, and maintain SOC 2 Type II certification. Your data security is our top priority."
+      },
+      {
+        "question": "Can customers book without creating accounts?",
+        "answer": "Absolutely. SlotEase supports guest booking with phone verification, making it accessible to everyone regardless of technical comfort level."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to Transform Your Scheduling?",
+    "subtitle": "Join thousands of organizations already using SlotEase to deliver exceptional customer experiences.",
+    "startTrial": "Start Your Free Trial",
+    "contactSales": "Contact Sales",
+    "disclaimer": "No credit card required • Setup in under 10 minutes • 30-day free trial"
+  }
+}
