@@ -42,6 +42,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleContactSales = () => {
+    window.location.href = 'mailto:anbiabi@yahoo.fr?subject=SlotEase Sales Inquiry&body=Hello, I am interested in learning more about SlotEase for my organization. Please contact me to discuss pricing and implementation.';
+  };
+
   const features = [
     {
       icon: Calendar,
@@ -577,7 +581,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <ArrowRight className="h-5 w-5 ml-2" />
             </button>
             
-            <button className="px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300 flex items-center justify-center">
+            <button 
+              onClick={handleContactSales}
+              className="px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-primary-600 transition-all duration-300 flex items-center justify-center"
+            >
               <Mail className="h-5 w-5 mr-2" />
               Contact Sales
             </button>
