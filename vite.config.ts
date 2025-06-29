@@ -7,6 +7,19 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['lucide-react', 'recharts'],
+          utils: ['date-fns', 'crypto-js', 'axios']
+        }
+      }
+    },
+    target: 'esnext',
+    minify: 'esbuild'
+  },
   test: {
     globals: true,
     environment: 'jsdom',
@@ -18,5 +31,8 @@ export default defineConfig({
     fs: {
       allow: ['..']
     }
+  },
+  define: {
+    global: 'globalThis',
   }
 });
