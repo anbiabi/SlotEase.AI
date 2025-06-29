@@ -1,5 +1,6 @@
 import { AIServiceRequest, ServiceFeedback, PublicService } from '../types/location';
 import { ConnectionService } from './ConnectionService';
+import { OpenAIService } from './OpenAIService';
 
 export class AIIntegrationService {
   private static instance: AIIntegrationService;

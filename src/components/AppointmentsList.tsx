@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, User, Phone, Mail, Filter, Search, ChevronDown } from 'lucide-react';
+import { Calendar, Clock, User, Search, ChevronDown } from 'lucide-react';
 import { useAppointments } from '../hooks/useAppointments';
 import { format, isToday, isTomorrow, addDays } from 'date-fns';
 
@@ -86,9 +86,10 @@ export const AppointmentsList: React.FC = () => {
           return a.date.getTime() - b.date.getTime();
         case 'time':
           return a.time.localeCompare(b.time);
-        case 'priority':
+        case 'priority': {
           const priorityOrder = { urgent: 0, high: 1, medium: 2, low: 3 };
           return priorityOrder[a.priority] - priorityOrder[b.priority];
+        }
         case 'status':
           return a.status.localeCompare(b.status);
         default:

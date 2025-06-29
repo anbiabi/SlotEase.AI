@@ -3,6 +3,7 @@ import { Calendar, Clock, User, Phone, Mail, CheckCircle, AlertCircle } from 'lu
 import { Service, ServiceProvider } from '../types';
 import { format, addDays, isWeekend } from 'date-fns';
 import { useAppointments } from '../hooks/useAppointments';
+import { processBookingWithAI } from '../ai/AIBackgroundProcessor';
 
 interface BookingFormProps {
   provider: ServiceProvider;
@@ -57,7 +58,19 @@ export const BookingForm: React.FC<BookingFormProps> = ({ provider, onBookingCom
         notes: formData.notes,
         priority: 'medium'
       });
-      
+
+      // --- AI Background Processing ---
+      processBookingWithAI({
+        userId: 'current_user_id', // Replace with actual user ID if available
+        serviceType: selectedService?.name || '',
+        date: formData.date,
+        time: formData.time,
+        specialRequirements: formData.notes,
+        contactInfo: { phone: formData.phone, email: formData.email },
+        channel: 'web'
+      });
+      // --- End AI Background Processing ---
+
       setBookingStatus('success');
       setTimeout(() => {
         onBookingComplete(appointmentId);
