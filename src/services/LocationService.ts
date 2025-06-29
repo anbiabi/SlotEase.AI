@@ -31,29 +31,46 @@ export class LocationService {
         maximumAge: 300000 // 5 minutes
       };
 
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const coords: Coordinates = {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-            accuracy: position.coords.accuracy,
-            altitude: position.coords.altitude || undefined,
-            altitudeAccuracy: position.coords.altitudeAccuracy || undefined,
-            heading: position.coords.heading || undefined,
-            speed: position.coords.speed || undefined,
-            timestamp: position.timestamp
-          };
+      let retryCount = 0;
+      const maxRetries = 3;
 
-          this.currentPosition = coords;
-          this.updatePermissionStatus('granted');
-          resolve(coords);
-        },
-        (error) => {
-          this.handleLocationError(error);
-          reject(error);
-        },
-        options
-      );
+      const retryRequest = async () => {
+        if (retryCount < maxRetries) {
+          retryCount++;
+          try {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const coords: Coordinates = {
+                  latitude: position.coords.latitude,
+                  longitude: position.coords.longitude,
+                  accuracy: position.coords.accuracy,
+                  altitude: position.coords.altitude || undefined,
+                  altitudeAccuracy: position.coords.altitudeAccuracy || undefined,
+                  heading: position.coords.heading || undefined,
+                  speed: position.coords.speed || undefined,
+                  timestamp: position.timestamp
+                };
+
+                this.currentPosition = coords;
+                this.updatePermissionStatus('granted');
+                resolve(coords);
+              },
+              (error) => {
+                this.handleLocationError(error);
+                reject(error);
+              },
+              options
+            );
+          } catch (retryError) {
+            console.error(`Retry ${retryCount} failed:`, retryError);
+            await retryRequest();
+          }
+        } else {
+          reject(new Error('Max retries reached'));
+        }
+      };
+
+      retryRequest();
     });
   }
 
@@ -71,25 +88,42 @@ export class LocationService {
       maximumAge: 60000 // 1 minute
     };
 
-    this.watchId = navigator.geolocation.watchPosition(
-      (position) => {
-        const coords: Coordinates = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-          accuracy: position.coords.accuracy,
-          altitude: position.coords.altitude || undefined,
-          altitudeAccuracy: position.coords.altitudeAccuracy || undefined,
-          heading: position.coords.heading || undefined,
-          speed: position.coords.speed || undefined,
-          timestamp: position.timestamp
-        };
+    let retryCount = 0;
+    const maxRetries = 3;
 
-        this.currentPosition = coords;
-        callback(coords);
-      },
-      (error) => this.handleLocationError(error),
-      options
-    );
+    const retryWatch = async () => {
+      if (retryCount < maxRetries) {
+        retryCount++;
+        try {
+          this.watchId = navigator.geolocation.watchPosition(
+            (position) => {
+              const coords: Coordinates = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                accuracy: position.coords.accuracy,
+                altitude: position.coords.altitude || undefined,
+                altitudeAccuracy: position.coords.altitudeAccuracy || undefined,
+                heading: position.coords.heading || undefined,
+                speed: position.coords.speed || undefined,
+                timestamp: position.timestamp
+              };
+
+              this.currentPosition = coords;
+              callback(coords);
+            },
+            (error) => this.handleLocationError(error),
+            options
+          );
+        } catch (retryError) {
+          console.error(`Retry ${retryCount} failed:`, retryError);
+          await retryWatch();
+        }
+      } else {
+        throw new Error('Max retries reached');
+      }
+    };
+
+    retryWatch();
   }
 
   /**

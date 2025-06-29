@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "language": "Español",
+    "direction": "ltr",
+    "dateFormat": "dd/MM/yyyy",
+    "timeFormat": "HH:mm"
+  },
+  "navigation": {
+    "dashboard": "Panel de Control",
+    "appointments": "Citas",
+    "queue": "Cola",
+    "analytics": "Análisis",
+    "setup": "Configuración",
+    "booking": "Reservar Cita",
+    "myAppointments": "Mis Citas",
+    "findServices": "Buscar Servicios",
+    "backToLanding": "Volver al Inicio",
+    "resetOnboarding": "Reiniciar Incorporación",
+    "switchView": "Cambiar a Vista de {{role}}"
+  },
+  "buttons": {
+    "getStarted": "Comenzar",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "submit": "Enviar",
+    "retry": "Intentar de Nuevo",
+    "loading": "Cargando...",
+    "viewDetails": "Ver Detalles",
+    "bookNow": "Reservar Ahora",
+    "print": "Imprimir",
+    "done": "Hecho"
+  },
+  "forms": {
+    "required": "Requerido",
+    "optional": "Opcional",
+    "name": "Nombre",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "address": "Dirección",
+    "notes": "Notas",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "selectOption": "Seleccionar una opción",
+    "enterText": "Ingresar texto",
+    "chooseFile": "Elegir archivo"
+  },
+  "time": {
+    "today": "Hoy",
+    "tomorrow": "Mañana",
+    "yesterday": "Ayer",
+    "thisWeek": "Esta Semana",
+    "nextWeek": "Próxima Semana",
+    "thisMonth": "Este Mes",
+    "nextMonth": "Próximo Mes",
+    "minutes": "{{count}} minuto",
+    "minutes_plural": "{{count}} minutos",
+    "hours": "{{count}} hora",
+    "hours_plural": "{{count}} horas",
+    "days": "{{count}} día",
+    "days_plural": "{{count}} días",
+    "weeks": "{{count}} semana",
+    "weeks_plural": "{{count}} semanas"
+  },
+  "status": {
+    "scheduled": "Programado",
+    "confirmed": "Confirmado",
+    "inProgress": "En Progreso",
+    "completed": "Completado",
+    "cancelled": "Cancelado",
+    "noShow": "No Asistió",
+    "open": "Abierto",
+    "closed": "Cerrado",
+    "busy": "Ocupado",
+    "available": "Disponible",
+    "unavailable": "No Disponible"
+  },
+  "accessibility": {
+    "wheelchairAccessible": "Accesible en Silla de Ruedas",
+    "hearingAssistance": "Asistencia Auditiva",
+    "visualAssistance": "Asistencia Visual",
+    "signLanguage": "Lenguaje de Señas",
+    "elevatorAccess": "Acceso por Ascensor",
+    "parkingAvailable": "Estacionamiento Disponible",
+    "publicTransportAccess": "Acceso a Transporte Público"
+  },
+  "language": {
+    "selectLanguage": "Seleccionar Idioma",
+    "currentLanguage": "Idioma Actual",
+    "changeLanguage": "Cambiar Idioma"
+  }
+}

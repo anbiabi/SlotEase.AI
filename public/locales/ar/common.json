@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "language": "العربية",
+    "direction": "rtl",
+    "dateFormat": "dd/MM/yyyy",
+    "timeFormat": "HH:mm"
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "appointments": "المواعيد",
+    "queue": "قائمة الانتظار",
+    "analytics": "التحليلات",
+    "setup": "الإعداد",
+    "booking": "حجز موعد",
+    "myAppointments": "مواعيدي",
+    "findServices": "البحث عن الخدمات",
+    "backToLanding": "العودة للصفحة الرئيسية",
+    "resetOnboarding": "إعادة تعيين التوجيه",
+    "switchView": "التبديل إلى عرض {{role}}"
+  },
+  "buttons": {
+    "getStarted": "ابدأ",
+    "next": "التالي",
+    "back": "السابق",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "submit": "إرسال",
+    "retry": "إعادة المحاولة",
+    "loading": "جاري التحميل...",
+    "viewDetails": "عرض التفاصيل",
+    "bookNow": "احجز الآن",
+    "print": "طباعة",
+    "done": "تم"
+  },
+  "forms": {
+    "required": "مطلوب",
+    "optional": "اختياري",
+    "name": "الاسم",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "notes": "ملاحظات",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "selectOption": "اختر خياراً",
+    "enterText": "أدخل النص",
+    "chooseFile": "اختر ملف"
+  },
+  "time": {
+    "today": "اليوم",
+    "tomorrow": "غداً",
+    "yesterday": "أمس",
+    "thisWeek": "هذا الأسبوع",
+    "nextWeek": "الأسبوع القادم",
+    "thisMonth": "هذا الشهر",
+    "nextMonth": "الشهر القادم",
+    "minutes": "{{count}} دقيقة",
+    "minutes_plural": "{{count}} دقيقة",
+    "hours": "{{count}} ساعة",
+    "hours_plural": "{{count}} ساعة",
+    "days": "{{count}} يوم",
+    "days_plural": "{{count}} يوم",
+    "weeks": "{{count}} أسبوع",
+    "weeks_plural": "{{count}} أسبوع"
+  },
+  "status": {
+    "scheduled": "مجدول",
+    "confirmed": "مؤكد",
+    "inProgress": "قيد التنفيذ",
+    "completed": "مكتمل",
+    "cancelled": "ملغي",
+    "noShow": "لم يحضر",
+    "open": "مفتوح",
+    "closed": "مغلق",
+    "busy": "مشغول",
+    "available": "متاح",
+    "unavailable": "غير متاح"
+  },
+  "accessibility": {
+    "wheelchairAccessible": "مناسب للكراسي المتحركة",
+    "hearingAssistance": "مساعدة سمعية",
+    "visualAssistance": "مساعدة بصرية",
+    "signLanguage": "لغة الإشارة",
+    "elevatorAccess": "مدخل المصعد",
+    "parkingAvailable": "موقف سيارات متاح",
+    "publicTransportAccess": "وصول النقل العام"
+  },
+  "language": {
+    "selectLanguage": "اختر اللغة",
+    "currentLanguage": "اللغة الحالية",
+    "changeLanguage": "تغيير اللغة"
+  }
+}

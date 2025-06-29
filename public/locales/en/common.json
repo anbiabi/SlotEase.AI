@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "language": "English",
+    "direction": "ltr",
+    "dateFormat": "MM/dd/yyyy",
+    "timeFormat": "h:mm a"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "appointments": "Appointments",
+    "queue": "Queue",
+    "analytics": "Analytics",
+    "setup": "Setup",
+    "booking": "Book Appointment",
+    "myAppointments": "My Appointments",
+    "findServices": "Find Services",
+    "backToLanding": "Back to Landing",
+    "resetOnboarding": "Reset to Onboarding",
+    "switchView": "Switch to {{role}} View"
+  },
+  "buttons": {
+    "getStarted": "Get Started",
+    "next": "Next",
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "submit": "Submit",
+    "retry": "Try Again",
+    "loading": "Loading...",
+    "viewDetails": "View Details",
+    "bookNow": "Book Now",
+    "print": "Print",
+    "done": "Done"
+  },
+  "forms": {
+    "required": "Required",
+    "optional": "Optional",
+    "name": "Name",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "address": "Address",
+    "notes": "Notes",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "selectOption": "Select an option",
+    "enterText": "Enter text",
+    "chooseFile": "Choose file"
+  },
+  "time": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "thisWeek": "This Week",
+    "nextWeek": "Next Week",
+    "thisMonth": "This Month",
+    "nextMonth": "Next Month",
+    "minutes": "{{count}} minute",
+    "minutes_plural": "{{count}} minutes",
+    "hours": "{{count}} hour",
+    "hours_plural": "{{count}} hours",
+    "days": "{{count}} day",
+    "days_plural": "{{count}} days",
+    "weeks": "{{count}} week",
+    "weeks_plural": "{{count}} weeks"
+  },
+  "status": {
+    "scheduled": "Scheduled",
+    "confirmed": "Confirmed",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "noShow": "No Show",
+    "open": "Open",
+    "closed": "Closed",
+    "busy": "Busy",
+    "available": "Available",
+    "unavailable": "Unavailable"
+  },
+  "accessibility": {
+    "wheelchairAccessible": "Wheelchair Accessible",
+    "hearingAssistance": "Hearing Assistance",
+    "visualAssistance": "Visual Assistance",
+    "signLanguage": "Sign Language",
+    "elevatorAccess": "Elevator Access",
+    "parkingAvailable": "Parking Available",
+    "publicTransportAccess": "Public Transport Access"
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "currentLanguage": "Current Language",
+    "changeLanguage": "Change Language"
+  }
+}
