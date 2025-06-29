@@ -2,6 +2,10 @@
 
 SlotEase.AI is an intelligent appointment and queue management platform designed to streamline bookings, optimize resource allocation, and enhance user experience for service-based businesses.
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## Features
 
 - Smart appointment scheduling

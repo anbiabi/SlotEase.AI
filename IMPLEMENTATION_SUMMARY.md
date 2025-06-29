@@ -1,5 +1,9 @@
 # SlotEase.AI Implementation Summary
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## ✅ What's Been Implemented
 
 ### 1. AI Integration (Mistral)
@@ -161,4 +165,4 @@ User Booking → Manual Workflow → AI Background Processing → Supabase Stora
 
 ---
 
-**Your SlotEase.AI system is now AI-augmented and ready for production use!** 🚀 
+**Your SlotEase.AI system is now AI-augmented and ready for production use!** 🚀

@@ -1,5 +1,9 @@
 # SlotEase.AI Setup Guide
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## Prerequisites
 
 1. **Node.js** (v16 or higher)
@@ -207,4 +211,4 @@ For issues or questions:
 1. Check the browser console for error messages
 2. Review the `AUDIT_REPORT.md` for technical details
 3. Check Supabase logs in the dashboard
-4. Verify environment variables are correctly set 
+4. Verify environment variables are correctly set

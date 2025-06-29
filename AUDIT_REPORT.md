@@ -1,5 +1,9 @@
 # SlotEase.AI Code Audit & Optimization Report
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## 1. Code Analysis
 - No major code duplications found. Utility logic is centralized.
 - Geolocation implementation is efficient and uses best practices (Haversine, browser APIs).
@@ -86,4 +90,4 @@
 - All changes are version controlled and documented for ongoing review.
 
 ---
-For further improvements, see technical debt section. 
+For further improvements, see technical debt section.
