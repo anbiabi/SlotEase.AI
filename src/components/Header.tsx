@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, Menu, Bell, Settings, User } from 'lucide-react';
 import { LanguageSelector } from './LanguageSelector';
+import { BoltBadge } from './BoltBadge';
 import { useTranslation } from '../hooks/useTranslation';
 
 interface HeaderProps {
@@ -108,6 +109,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
           {/* User Actions */}
           <div className="flex items-center space-x-4">
             <LanguageSelector className="hidden sm:block" />
+            <BoltBadge variant="minimal" className="hidden lg:block" />
             <button className="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-colors">
               <Bell className="h-5 w-5" />
             </button>

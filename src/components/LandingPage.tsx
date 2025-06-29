@@ -20,6 +20,7 @@ import {
   Monitor,
   MessageSquare
 } from 'lucide-react';
+import { BoltBadge } from './BoltBadge';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -239,6 +240,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       <section className="relative min-h-screen flex items-center justify-center safari-gradient-hero overflow-hidden">
         <div className="absolute inset-0 safari-texture"></div>
         <div className="absolute inset-0 safari-pattern opacity-30"></div>
+        
+        {/* Bolt Badge - Top Right */}
+        <div className="absolute top-6 right-6 z-20">
+          <BoltBadge variant="minimal" className="bg-white bg-opacity-90 rounded-lg px-3 py-2" />
+        </div>
         
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -686,7 +692,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Join thousands of organizations already using SlotEase to deliver exceptional customer experiences.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <button
               onClick={onGetStarted}
               className="px-8 py-4 bg-white text-safari-terracotta text-lg font-semibold rounded-lg hover:bg-safari-beige transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center"
@@ -704,9 +710,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </button>
           </div>
 
-          <p className="text-white opacity-80 text-sm mt-6">
+          <p className="text-white opacity-80 text-sm mb-8">
             No credit card required • Setup in under 10 minutes • 30-day free trial
           </p>
+
+          {/* Bolt Badge in Footer */}
+          <BoltBadge variant="footer" className="mt-8" />
         </div>
       </section>
 

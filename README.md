@@ -1,10 +1,16 @@
 # SlotEase.AI
 
+[![Built with Bolt.new](https://img.shields.io/badge/Built%20with-Bolt.new-blue?style=for-the-badge&logo=bolt&logoColor=white)](https://bolt.new)
+
 SlotEase.AI is an intelligent appointment and queue management platform designed to streamline bookings, optimize resource allocation, and enhance user experience for service-based businesses.
 
 ## 🎥 Demo Video
 
 Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
+## ⚡ Built with Bolt.new
+
+This project was built using [Bolt.new](https://bolt.new), the AI-powered full-stack development platform that enables rapid prototyping and deployment of modern web applications.
 
 ## Features
 
@@ -58,3 +64,11 @@ See [LICENSE](LICENSE) for details.
 ## Contact
 
 For questions or support, please open an issue on GitHub.
+
+---
+
+<div align="center">
+  <a href="https://bolt.new">
+    <img src="https://img.shields.io/badge/Built%20with-Bolt.new-blue?style=for-the-badge&logo=bolt&logoColor=white" alt="Built with Bolt.new" />
+  </a>
+</div>
