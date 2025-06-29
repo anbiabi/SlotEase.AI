@@ -1,5 +1,7 @@
 import React from 'react';
 import { Calendar, Menu, Bell, Settings, User } from 'lucide-react';
+import { LanguageSelector } from './LanguageSelector';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface HeaderProps {
   currentView: string;
@@ -8,6 +10,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userRole }) => {
+  const { t } = useTranslation('common');
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Dashboard
+                  {t('navigation.dashboard')}
                 </button>
                 <button
                   onClick={() => onViewChange('appointments')}
@@ -42,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Appointments
+                  {t('navigation.appointments')}
                 </button>
                 <button
                   onClick={() => onViewChange('queue')}
@@ -52,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Queue
+                  {t('navigation.queue')}
                 </button>
                 <button
                   onClick={() => onViewChange('analytics')}
@@ -62,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Analytics
+                  {t('navigation.analytics')}
                 </button>
                 <button
                   onClick={() => onViewChange('setup')}
@@ -72,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Setup
+                  {t('navigation.setup')}
                 </button>
               </>
             ) : (
@@ -85,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  Book Appointment
+                  {t('navigation.booking')}
                 </button>
                 <button
                   onClick={() => onViewChange('my-appointments')}
@@ -95,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
                       : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                   }`}
                 >
-                  My Appointments
+                  {t('navigation.myAppointments')}
                 </button>
               </>
             )}
@@ -103,6 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onViewChange, userR
 
           {/* User Actions */}
           <div className="flex items-center space-x-4">
+            <LanguageSelector className="hidden sm:block" />
             <button className="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-colors">
               <Bell className="h-5 w-5" />
             </button>
