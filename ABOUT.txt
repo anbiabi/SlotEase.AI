@@ -3,7 +3,12 @@
 An autonomous, AI-powered global scheduling assistant that learns and connects users 
 to real-world services — from hospitals to haircuts, immigration centers to insurance 
 offices — eliminating waiting, confusion, and missed opportunities through smart planning, 
-seamless integration, and dynamic availability management.# About SlotEase.AI
+seamless integration, and dynamic availability management.
+
+🎥 Demo Video
+Watch our 3-minute hackathon demo: https://www.youtube.com/watch?v=6QavFYIhhAQ
+
+# About SlotEase.AI
 
 No more long queues, no crowds for any service.
 SlotEase.AI is a modern, AI-powered platform for managing appointments and queues, 
@@ -31,7 +36,7 @@ text, voice or video avatar.
 
 Welcome → Terms & Consent → Service Selection → Personal Info → Calendar & Time Slot → Confirmation
 1️⃣ Welcome Screen
-Title: “Welcome to SlotEase.AI — Your Universal Reservation Assistant”
+Title: "Welcome to SlotEase.AI — Your Universal Reservation Assistant"
 
 Book appointments with hospitals, government offices, clinics, 
 public/private/business services & more.
@@ -65,7 +70,7 @@ Captcha (Google reCAPTCHA or hCaptcha)
 
 🔒 Secure and mobile-friendly input
 
-➕ Option: “Receive confirmation by SMS” toggle
+➕ Option: "Receive confirmation by SMS" toggle
 
 5️⃣ Appointment Scheduling Interface
 
@@ -110,9 +115,9 @@ Auto-send reservation details to user's phone (SMS + optional email)
 
 Prompt:
 
-🖨️ “Print Reservation Sheet” button
+🖨️ "Print Reservation Sheet" button
 
-✅ “Done” button
+✅ "Done" button
 
 🖌️ UX Design Specifications
 	All personal data encrypted and deleted after confirmation if required

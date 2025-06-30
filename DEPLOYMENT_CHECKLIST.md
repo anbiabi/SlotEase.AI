@@ -1,5 +1,9 @@
 # SlotEase.AI Deployment Checklist
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## ✅ Pre-Deployment Tests
 
 ### 1. Build Verification
@@ -199,4 +203,4 @@ npm run build
 
 **Last Updated**: December 2024
 **Version**: 1.0.0
-**Environment**: Production 
+**Environment**: Production

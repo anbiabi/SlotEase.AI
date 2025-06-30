@@ -1,5 +1,9 @@
 # SlotEase.AI Project Optimization Report
 
+## 🎥 Demo Video
+
+Watch our 3-minute hackathon demo: [https://www.youtube.com/watch?v=6QavFYIhhAQ](https://www.youtube.com/watch?v=6QavFYIhhAQ)
+
 ## Overview
 This report documents the comprehensive optimization and cleanup performed on the SlotEase.AI project to improve performance, maintainability, and code quality.
 
@@ -152,4 +156,4 @@ The project is now in a much better state for development and deployment. The bu
 ---
 *Report generated on: December 2024*
 *Project: SlotEase.AI*
-*Status: Optimized ✅* 
+*Status: Optimized ✅*
