@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, User, Phone, Mail, CheckCircle, AlertCircle } from 'lucide-react';
-import { Service, ServiceProvider } from '../types';
-import { format, addDays, isWeekend } from 'date-fns';
+import { Clock, User, Phone, Mail, CheckCircle, AlertCircle } from 'lucide-react';
+import { ServiceProvider } from '../types';
+import { format, addDays } from 'date-fns';
 import { useAppointments } from '../hooks/useAppointments';
 import { processBookingWithAI } from '../ai/AIBackgroundProcessor';
+import enUS from 'date-fns/locale/en-US';
 
 interface BookingFormProps {
   provider: ServiceProvider;
@@ -75,14 +76,14 @@ export const BookingForm: React.FC<BookingFormProps> = ({ provider, onBookingCom
       setTimeout(() => {
         onBookingComplete(appointmentId);
       }, 2000);
-    } catch (error) {
+    } catch {
       setBookingStatus('error');
     }
   };
 
   const getNextAvailableDates = () => {
     const dates = [];
-    let currentDate = new Date();
+    const currentDate = new Date();
     
     for (let i = 0; i < 14; i++) {
       const date = addDays(currentDate, i);
@@ -110,7 +111,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ provider, onBookingCom
         <div className="bg-accent-50 rounded-lg p-6 max-w-md mx-auto">
           <div className="text-sm text-accent-800">
             <p><strong>Service:</strong> {selectedService?.name}</p>
-            <p><strong>Date:</strong> {format(new Date(formData.date), 'MMMM d, yyyy')}</p>
+            <p><strong>Date:</strong> {format(new Date(formData.date), 'MMMM d, yyyy', { locale: enUS })}</p>
             <p><strong>Time:</strong> {formData.time}</p>
             <p><strong>Duration:</strong> {selectedService?.duration} minutes</p>
           </div>
@@ -219,9 +220,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({ provider, onBookingCom
                 onClick={() => handleDateSelect(date.toISOString().split('T')[0])}
                 className="p-4 border-2 border-gray-200 rounded-lg hover:border-primary-500 hover:shadow-md transition-all text-center"
               >
-                <div className="text-sm text-gray-500">{format(date, 'EEE')}</div>
-                <div className="text-lg font-semibold text-gray-900">{format(date, 'd')}</div>
-                <div className="text-sm text-gray-500">{format(date, 'MMM')}</div>
+                <div className="text-sm text-gray-500">{format(date, 'EEE', { locale: enUS })}</div>
+                <div className="text-lg font-semibold text-gray-900">{format(date, 'd', { locale: enUS })}</div>
+                <div className="text-sm text-gray-500">{format(date, 'MMM', { locale: enUS })}</div>
               </button>
             ))}
           </div>
