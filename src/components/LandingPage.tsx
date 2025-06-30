@@ -737,6 +737,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               />
             </a>
           </div>
+          {/* Sponsors Row */}
+          <div className="flex flex-wrap justify-center items-center gap-6 mt-6 opacity-60">
+            <img src="/sponsors/algorand/logo-color.svg" alt="Algorand" className="h-8" />
+            <img src="/sponsors/anthropic/logo-color.svg" alt="Anthropic" className="h-8" />
+            <img src="/sponsors/elevenlabs/logo-color.svg" alt="ElevenLabs" className="h-8" />
+            <img src="/sponsors/entri/logo-color.svg" alt="Entri" className="h-8" />
+            <img src="/sponsors/netlify/logo-color.svg" alt="Netlify" className="h-8" />
+            <img src="/sponsors/reddit/logo-color.svg" alt="Reddit" className="h-8" />
+            <img src="/sponsors/revenuecat/logo-color.svg" alt="Revenuecat" className="h-8" />
+            <img src="/sponsors/supabase/logo-color.svg" alt="Supabase" className="h-8" />
+            <img src="/sponsors/tavus/logo-color.svg" alt="Tavus" className="h-8" />
+          </div>
         </div>
       </section>
 
