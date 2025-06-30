@@ -240,6 +240,22 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
         <div className="absolute inset-0 safari-texture"></div>
         <div className="absolute inset-0 safari-pattern opacity-30"></div>
         
+        {/* Bolt Badge - Top Right */}
+        <div className="absolute top-8 right-8 z-20">
+          <a 
+            href="https://bolt.new/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block transition-transform hover:scale-105"
+          >
+            <img 
+              src="/bolt-badge/white_circle_360x360/white_circle_360x360.svg" 
+              alt="Built with Bolt.new" 
+              className="h-16 w-16 md:h-20 md:w-20"
+            />
+          </a>
+        </div>
+        
         <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
