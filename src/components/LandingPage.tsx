@@ -727,6 +727,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
           {/* Bolt Badge in Footer */}
           <BoltBadge variant="footer" className="mt-8" />
+          {/* Discreet logotext badge */}
+          <div className="flex justify-center mt-4 opacity-60">
+            <a href="https://bolt.new/" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="/bolt-badge/logotext_poweredby_360w/logotext_poweredby_360w.svg" 
+                alt="Powered by Bolt.new" 
+                className="h-8 md:h-10"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
