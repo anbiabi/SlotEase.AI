@@ -21,7 +21,7 @@ export class SupabaseService {
     try {
       // Test connection
       const { error } = await supabase
-        .from('ai_service_requests')
+        .from('organizations')
         .select('count')
         .limit(1);
 
@@ -124,4 +124,4 @@ VITE_SUPABASE_ANON_KEY=your-production-anon-key
 }
 
 // Export singleton instance
-export const supabaseService = SupabaseService.getInstance(); 
+export const supabaseService = SupabaseService.getInstance();

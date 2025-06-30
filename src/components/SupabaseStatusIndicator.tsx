@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Database, CheckCircle, AlertCircle, XCircle, Loader, Settings } from 'lucide-react';
 import { checkSupabaseStatus, getSetupInstructions, type SupabaseStatus } from '../utils/supabaseStatus';
-import { SupabaseSetupModal } from './SupabaseSetupModal';
 
 export const SupabaseStatusIndicator: React.FC = () => {
   const [status, setStatus] = useState<SupabaseStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [showDetails, setShowDetails] = useState(false);
-  const [showSetupModal, setShowSetupModal] = useState(false);
 
   useEffect(() => {
     const checkStatus = async () => {
@@ -132,15 +130,7 @@ export const SupabaseStatusIndicator: React.FC = () => {
                 </div>
               )}
 
-              <div className="border-t pt-3 space-y-2">
-                <button
-                  onClick={() => setShowSetupModal(true)}
-                  className="w-full flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  <Settings className="h-4 w-4 mr-2" />
-                  Setup Supabase
-                </button>
-                
+              <div className="border-t pt-3">
                 <details>
                   <summary className="cursor-pointer font-medium text-blue-600">Quick Setup Instructions</summary>
                   <pre className="mt-2 text-xs bg-gray-100 p-2 rounded whitespace-pre-wrap">
@@ -152,11 +142,6 @@ export const SupabaseStatusIndicator: React.FC = () => {
           </div>
         )}
       </div>
-
-      <SupabaseSetupModal 
-        isOpen={showSetupModal} 
-        onClose={() => setShowSetupModal(false)} 
-      />
     </>
   );
 };

@@ -11,6 +11,7 @@ import { LocationServiceFinder } from './components/LocationServiceFinder';
 import { LandingPage } from './components/LandingPage';
 import { LanguageSelector } from './components/LanguageSelector';
 import { SupabaseStatusIndicator } from './components/SupabaseStatusIndicator';
+import { SupabaseSetupGuide } from './components/SupabaseSetupGuide';
 import { useAppointments } from './hooks/useAppointments';
 import { useTranslation } from './hooks/useTranslation';
 import { supabaseService } from './services/SupabaseService';
@@ -58,7 +59,7 @@ const LoadingSpinner = () => (
   </div>
 );
 
-type ViewType = 'landing' | 'onboarding' | 'dashboard' | 'booking' | 'appointments' | 'my-appointments' | 'analytics' | 'location-services' | 'setup' | 'queue';
+type ViewType = 'landing' | 'onboarding' | 'dashboard' | 'booking' | 'appointments' | 'my-appointments' | 'analytics' | 'location-services' | 'setup' | 'queue' | 'supabase-setup';
 type UserRole = 'user' | 'admin';
 
 interface OnboardingData {
@@ -163,6 +164,8 @@ function App() {
         return <Analytics />;
       case 'setup':
         return <SetupWizard />;
+      case 'supabase-setup':
+        return <SupabaseSetupGuide />;
       default:
         return <LandingPage onGetStarted={handleGetStarted} />;
     }
@@ -228,6 +231,12 @@ function App() {
               className="block w-full bg-secondary-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-secondary-700 transition-colors text-sm font-medium"
             >
               {t('navigation.resetOnboarding')}
+            </button>
+            <button
+              onClick={() => setCurrentView('supabase-setup')}
+              className="block w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+            >
+              Supabase Setup
             </button>
             <button
               onClick={() => setUserRole(userRole === 'admin' ? 'user' : 'admin')}
