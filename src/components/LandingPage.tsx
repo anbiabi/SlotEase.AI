@@ -3,7 +3,6 @@ import {
   Calendar, 
   Clock, 
   Users, 
-  CheckCircle, 
   ArrowRight, 
   Star, 
   Shield, 
@@ -30,6 +29,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [showCTA, setShowCTA] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+
+  const YOUTUBE_DEMO_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with real demo URL
 
   useEffect(() => {
     setIsVisible(true);
@@ -43,8 +46,27 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleWatchDemo = () => {
+    window.open(YOUTUBE_DEMO_URL, '_blank', 'noopener,noreferrer');
+  };
+
   const handleContactSales = () => {
-    window.location.href = 'mailto:anbiabi@yahoo.fr?subject=SlotEase Sales Inquiry&body=Hello, I am interested in learning more about SlotEase for my organization. Please contact me to discuss pricing and implementation.';
+    setShowContactModal(true);
+  };
+
+  const handleContactFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setContactForm({ ...contactForm, [e.target.name]: e.target.value });
+  };
+
+  const handleContactFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent('SlotEase Sales Inquiry');
+    const body = encodeURIComponent(
+      `Name: ${contactForm.name}\nEmail: ${contactForm.email}\nMessage: ${contactForm.message}`
+    );
+    window.location.href = `mailto:anbiabi@yahoo.fr?subject=${subject}&body=${body}`;
+    setShowContactModal(false);
+    setContactForm({ name: '', email: '', message: '' });
   };
 
   const features = [
@@ -127,7 +149,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   return (
     <div className="min-h-screen bg-safari-beige">
       {/* Custom Safari Styles */}
-      <style jsx>{`
+      <style>{`
         .bg-safari-beige { background-color: #F5F5DC; }
         .bg-safari-terracotta { background-color: #CD4F38; }
         .bg-safari-ochre { background-color: #DAA520; }
@@ -290,7 +312,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
               <ArrowRight className="h-5 w-5 ml-2" />
             </button>
             
-            <button className="px-8 py-4 safari-btn-secondary text-lg font-semibold rounded-lg flex items-center justify-center">
+            <button
+              onClick={handleWatchDemo}
+              className="px-8 py-4 safari-btn-secondary text-lg font-semibold rounded-lg flex items-center justify-center"
+            >
               <Play className="h-5 w-5 mr-2" />
               Watch Demo
             </button>
@@ -410,7 +435,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             </div>
 
             <div className="safari-card p-8 rounded-2xl">
-              <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="bg-white rounded-xl shadow-lg p-6 relative">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-semibold text-safari-green">Live Demo Preview</h4>
                   <div className="flex space-x-2">
@@ -419,7 +444,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
                     <div className="w-3 h-3 bg-safari-green rounded-full"></div>
                   </div>
                 </div>
-                
+                {/* Clickable overlay for YouTube demo */}
+                <button
+                  onClick={handleWatchDemo}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  aria-label="Watch Live Demo Video"
+                  tabIndex={-1}
+                />
                 {/* Mock Interface */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-3 bg-safari-beige rounded-lg">
@@ -762,6 +793,62 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             Get Started
             <ArrowRight className="h-4 w-4 ml-2" />
           </button>
+        </div>
+      )}
+
+      {showContactModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-lg relative">
+            <button
+              className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+              onClick={() => setShowContactModal(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h2 className="text-2xl font-bold mb-4 text-safari-green">Contact Sales</h2>
+            <form onSubmit={handleContactFormSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={contactForm.name}
+                  onChange={handleContactFormChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={contactForm.email}
+                  onChange={handleContactFormChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea
+                  name="message"
+                  value={contactForm.message}
+                  onChange={handleContactFormChange}
+                  required
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                  rows={4}
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-safari-green text-white font-semibold py-2 rounded-lg hover:bg-safari-terracotta transition-all"
+              >
+                Send
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </div>
