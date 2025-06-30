@@ -10,6 +10,7 @@ import { UserOnboarding } from './components/UserOnboarding';
 import { LocationServiceFinder } from './components/LocationServiceFinder';
 import { LandingPage } from './components/LandingPage';
 import { LanguageSelector } from './components/LanguageSelector';
+import { SupabaseStatusIndicator } from './components/SupabaseStatusIndicator';
 import { useAppointments } from './hooks/useAppointments';
 import { useTranslation } from './hooks/useTranslation';
 import { supabaseService } from './services/SupabaseService';
@@ -173,6 +174,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>
           <div className="min-h-screen bg-gray-50">
+            <SupabaseStatusIndicator />
             {renderCurrentView()}
           </div>
         </Suspense>
@@ -186,6 +188,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>
           <div className="min-h-screen bg-gray-50">
+            <SupabaseStatusIndicator />
             {renderCurrentView()}
           </div>
         </Suspense>
@@ -197,6 +200,7 @@ function App() {
     <ErrorBoundary>
       <Suspense fallback={<LoadingSpinner />}>
         <div className="min-h-screen bg-gray-50">
+          <SupabaseStatusIndicator />
           <Header 
             currentView={currentView} 
             onViewChange={setCurrentView} 
@@ -236,22 +240,6 @@ function App() {
               <LanguageSelector variant="dropdown" className="w-full" />
             </div>
           </div>
-          {/* Supabase Status Indicator (Development Only) */}
-          {import.meta.env.DEV && supabaseStatus && (
-            <div className="fixed top-4 left-4 bg-white p-3 rounded-lg shadow-lg border text-xs">
-              <div className="font-semibold mb-1">Supabase Status:</div>
-              <div className={`inline-block w-2 h-2 rounded-full mr-2 ${
-                supabaseStatus.connectionStatus === 'connected' ? 'bg-green-500' :
-                supabaseStatus.connectionStatus === 'disconnected' ? 'bg-yellow-500' : 'bg-red-500'
-              }`}></div>
-              {supabaseStatus.connectionStatus}
-              {!supabaseStatus.isConfigured && (
-                <div className="mt-1 text-red-600">
-                  Missing: {supabaseStatus.missingEnvVars.join(', ')}
-                </div>
-              )}
-            </div>
-          )}
         </div>
       </Suspense>
     </ErrorBoundary>
