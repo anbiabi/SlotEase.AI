@@ -32,7 +32,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [showContactModal, setShowContactModal] = useState(false);
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
 
-  const YOUTUBE_DEMO_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with real demo URL
+  const YOUTUBE_DEMO_URL = 'https://www.youtube.com/watch?v=6QavFYIhhAQ';
 
   useEffect(() => {
     setIsVisible(true);
